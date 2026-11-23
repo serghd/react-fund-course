@@ -2,7 +2,7 @@ import React from "react";
 import { usePagesArray } from "../../../hooks/usePagesArray";
 
 const Pagination = ({totalPages, page, changePage}) => {
-   let pagesArray = usePagesArray(totalPages);
+   let pagesArray = usePagesArray(totalPages);        
 
    return (
       <div className="page__wrapper">

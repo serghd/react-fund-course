@@ -5,9 +5,17 @@ export default class PostService {
       const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
          params: {
             _limit: limit,
-            _page: page
+            _page: (limit == -1) ? 1 : page
          }
       });
       return response;
+   }
+
+   static async getById(id) {
+      return await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+   }
+
+   static async getCommentsByPostId(id) {
+      return await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
    }
 }
